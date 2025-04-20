@@ -6,6 +6,7 @@ const App = () => {
     <div className='app'>
      <Routes>
       <Route path='/' element={<Home/>} />
+      <Route path='/crypto/:cryptoId' element={<Crypto/>}/>
      </Routes>
     </div>
   )
