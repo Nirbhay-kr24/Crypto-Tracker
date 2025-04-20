@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 export const Crypto = () => {
   return (
-    <div>Crypto</div>
-  )
-}
+    <>
+      <NavBar />
+
+      <Footer />
+    </>
+  );
+};
