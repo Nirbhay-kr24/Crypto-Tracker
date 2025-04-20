@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const CryptoContext = createContext();
 
@@ -27,19 +27,38 @@ const fetchCryptoData = async () =>{
             options
         );
         const data = await res.json();
-        setCryptoList(data); // Assuming this updates your state
+        setCryptoList(data); 
     } catch (err) {
         console.error("Failed to fetch crypto data:", err);
     }
       }
 
     // REFETCH WHEN CURRENCY CHANGES
-
-
+    useEffect(() => {
+        fetchCryptoData();
+      }, [currentCurrency]);
+      
+    // Re-filter when raw crypto list or search term changes
+      useEffect(() => {
+        if (searchTerm.trim() !== "") {
+            setFilteredCryptos(cryptoList);
+        }
+        else{
+            setFilteredCryptos(
+            cryptoList.filter((c) =>
+              c.name.toLowerCase().includes(searchTerm.toLowerCase()))
+        )
+        }
+    }, [cryptoList, searchTerm]);
 
 
     const contextValue = {
-   
+        cryptoList,
+        filteredCryptos,
+        currentCurrency,
+        setCurrentCurrency,
+        searchTerm,
+        setSearchTerm,
   };
 
   return (
