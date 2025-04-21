@@ -13,7 +13,7 @@ const Footer = () => {
 
         <div className="text-center mt-2 text-xs md:text-sm text-gray-400">
           <p>
-            Made with <span className="text-red-400/80">&hearts;</span>
+            Made with <span className="text-red-400/80">React + Vite</span>
           </p>
           <p className="hover:text-purple-400 transition-colors">
             Nirbhay Kumar

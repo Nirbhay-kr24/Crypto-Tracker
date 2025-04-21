@@ -14,7 +14,7 @@ function CoinArea() {
         setCurrentCurrency({ name: "usd", symbol: "$" });
         break;
       case "eur":
-        setCurrentCurrency({ name: "euro", symbol: "€" });
+        setCurrentCurrency({ name: "eur", symbol: "€" });
         break;
       case "inr":
         setCurrentCurrency({ name: "inr", symbol: "₹" });
