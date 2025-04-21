@@ -11,20 +11,18 @@ const CryptoContextProvider = (props) => {
     symbol: "$",
   });
 
-  // API - CG-gWe3xMvTZWJVXf8NQLRFEgUE
-
   const fetchCryptoData = async () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "CG-gWe3xMvTZWJVXf8NQLRFEgUE",
+        "x-cg-demo-api-key": import.meta.env.VITE_PUBLIC_COINGECKO_API_KEY,
       },
     };
 
     try {
       const res = await fetch(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currentCurrency.name}`,
+        `${import.meta.env.VITE_PUBLIC_COINGECKO_API_URL}${currentCurrency.name}`,
         options
       );
       const data = await res.json();
