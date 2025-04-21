@@ -94,6 +94,38 @@ const CoinPage = () => {
               ({coinDetails.symbol?.toUpperCase()})
             </span>
           </h1>
+          <p className="mt-1 text-sm text-gray-300/80">
+            Rank: #{coinDetails.market_cap_rank}
+          </p>
+        </div>
+      </div>
+
+      <div className="mb-6 bg-gray-800/30 backdrop-blur-md p-4 rounded-xl border border-emerald-500/20">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 gap-2">
+          <h2 className="text-lg font-semibold text-emerald-400/90">
+            {currentCurrency.symbol} Price Chart
+          </h2>
+          <div className="relative group">
+            <select
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+              className="bg-gray-800/60 border border-emerald-500/30 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+            >
+              <option value="1">24H</option>
+              <option value="7">7D</option>
+              <option value="10">10D</option>
+              <option value="30">30D</option>
+              <option value="90">3M</option>
+              <option value="365">1Y</option>
+            </select>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-600/20 to-cyan-500/20 rounded-lg blur opacity-30 group-hover:opacity-50 transition duration-300 -z-10" />
+          </div>
+        </div>
+
+        <div
+        className="h-64 md:h-80">
+          <AreaChart historicalData={charData}
+          currencySymbol={currentCurrency.symbol}/>
         </div>
       </div>
     </div>
