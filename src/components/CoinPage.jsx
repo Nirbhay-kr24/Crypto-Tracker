@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CryptoContext } from "../context/CryptoContext";
+import AreaChart from "./AreaChart";
 
 const CoinPage = () => {
   const { cryptoId } = useParams();
@@ -124,7 +125,7 @@ const CoinPage = () => {
 
         <div
         className="h-64 md:h-80">
-          <AreaChart historicalData={charData}
+          <AreaChart historicalData={chartData}
           currencySymbol={currentCurrency.symbol}/>
         </div>
       </div>
