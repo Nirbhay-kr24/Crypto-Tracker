@@ -83,7 +83,7 @@ CryptoTracking/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/CryptoTracking.git
+git clone https://github.com/Nirbhay-kr24/CryptoTracking.git
 cd CryptoTracking
 
 # Install dependencies
@@ -96,6 +96,7 @@ npm run dev
 ## Deployment
 Deployed using [Netlify](https://www.netlify.com/).   
 
+```
 
 ## Website SnapShots
 
